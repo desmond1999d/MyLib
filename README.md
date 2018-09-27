@@ -1,4 +1,4 @@
 # MyLib
-##### The current version of MyLib - 0.01
-MyLib is a desktop app, that helps to manage books in personal libraries.
-### Requirments: https://github.com/desmond1999d/MyLib/blob/master/Documentation/SRS.md
+##### Текущая версия MyLib - 0.01
+Mylib - это простое приложение-менеджер персональной библиотеки.
+### Спецификация требований ПО: https://github.com/desmond1999d/MyLib/blob/master/Documentation/SRS.md
