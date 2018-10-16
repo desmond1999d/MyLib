@@ -14,7 +14,7 @@
 6.2.5 [Изменить критерий сортировки](#6.2.5)<br>
 6.2.6 [Открыть книгу](#6.2.6)<br>
 
-### [Глоссарий](https://github.com/steppbol/B-Player/blob/master/docs/Project%20Documentation/Glossary.md)
+### [Глоссарий](https://github.com/desmond1999d/MyLib/blob/master/Documentation/Glossary.md)
 
 ### 1. Диаграмма активности<a name="1"></a>
 Диагаммы активности более подробно расписаны в следующем документе:
