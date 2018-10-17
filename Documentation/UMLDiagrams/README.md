@@ -17,7 +17,7 @@
 ### [Глоссарий](https://github.com/desmond1999d/MyLib/blob/master/Documentation/Glossary.md)
 
 ### 1. Диаграмма активности<a name="1"></a>
-Диагаммы активности более подробно расписаны в следующем документе:
+[Диагаммы активности](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/ActivityDiagrams/README.md)
 
 ### 2. Диаграмма классов<a name="2"></a>
 Диаграмма классов представляет собой следующую диаграмму: 
