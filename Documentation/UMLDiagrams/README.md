@@ -18,7 +18,7 @@
 
 ### 1. Диаграмма вариантов использования<a name="1"></a>
 Диаграмма вариантов использования представляет собой следующую диаграмму: 
-![Use Case](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/UseCase/UseCaseDiagram.png)
+![Use Case](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/UseCaseDiagram/UseCaseDiagram.png)
 #### 1.1 Актёры<a name="1.1"></a>
 Актёр | Описание
 --- | ---
