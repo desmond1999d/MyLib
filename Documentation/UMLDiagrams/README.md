@@ -78,6 +78,7 @@
 ![Sequence Diagram](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/Sequence/SequenceDiagram.png)
 
 ### 4. Диаграмма состояний<a name="4"></a>
+[Диагаммы состояний](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/StateDiagrams/README.md)
 
 ### 5. Диаграмма классов<a name="5"></a>
 
