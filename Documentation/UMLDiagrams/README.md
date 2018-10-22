@@ -13,6 +13,7 @@
 4. [Диаграмма состояний](#4)
 5. [Диаграмма классов](#5)
 6. [Диаграмма компонентов](#6)
+7. [Диаграмма развертывания](#7)
 
 ### [Глоссарий](https://github.com/desmond1999d/MyLib/blob/master/Documentation/Glossary.md)
 
@@ -84,3 +85,7 @@
 ![Диагамма классов](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/ClassDiagram/ClassDiagram.png)
 
 ### 6. Диаграмма компонентов<a name="6"></a>
+![Диагамма компонентов](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/ComponentDiagram/Component.png)
+
+### 7. Диаграмма развертывания<a name="7"></a>
+![Диагамма развертывания](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/DeploymentDiagram/DeploymentDiagram.png)
