@@ -82,7 +82,7 @@
 [Диагаммы состояний](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/StateDiagrams/README.md)
 
 ### 5. Диаграмма классов<a name="5"></a>
-![Диагамма классов](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/ClassDiagram/ClassDiagram.png)
+![Диагамма классов](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/ClassDiagram/ClassDiagram1.png)
 
 ### 6. Диаграмма компонентов<a name="6"></a>
 ![Диагамма компонентов](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/ComponentDiagram/Component.png)
