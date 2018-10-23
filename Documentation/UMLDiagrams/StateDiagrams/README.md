@@ -6,7 +6,7 @@
 5. [Сортировка списка книг](#5)
 
 ### 1. Добавление книги<a name="1"></a>
-![Добавление книги](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/StateDiagrams/State1.png)
+![Добавление книги](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/StateDiagrams/State.png)
 
 ### 2. Удаление книги<a name="2"></a>
 ![Удаление книги](https://github.com/desmond1999d/MyLib/blob/master/Documentation/UMLDiagrams/StateDiagrams/State2.png)
