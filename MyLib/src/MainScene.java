@@ -50,6 +50,7 @@ private Button deleteBook;
         sortCriterion.setMinWidth(300);
         sortCriterion.relocate(50, 200);
         booksListRepresentation.relocate(500, 50);
+        booksListRepresentation.setMinSize(300, 450);
         pane.getChildren().addAll(addBook, deleteBook, search, searchRequest, sortCategories, sortCriterion, booksListRepresentation);
     }
 
