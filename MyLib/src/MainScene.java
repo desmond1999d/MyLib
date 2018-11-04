@@ -1,12 +1,15 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class MainScene extends Scene {
 
+    final private Stage primaryStage;
     private Pane pane;
     private Button addBook;
 private Button deleteBook;
@@ -17,8 +20,9 @@ private Button deleteBook;
     private ListView<Book> booksListRepresentation;
     private ObservableList<Book> booksList;
 
-    MainScene(final Pane constructorPane, final int sizeX, final int sizeY) {
+    MainScene(final Stage stage, final Pane constructorPane, final int sizeX, final int sizeY) {
         super(constructorPane, sizeX, sizeY);
+        primaryStage = stage;
         pane = constructorPane;
         addBook = new Button("+");
         deleteBook = new Button("-");
@@ -29,6 +33,18 @@ private Button deleteBook;
         booksList = FXCollections.observableArrayList();
         booksListRepresentation = new ListView<>(booksList);
         sceneSetup();
+        setActions();
+    }
+
+    private void setActions() {
+        addBook.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        primaryStage.setScene(new AddBookScene(primaryStage, new Pane(), 800, 600));
+                    }
+                }
+        );
     }
 
     private void sceneSetup() {

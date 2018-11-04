@@ -13,7 +13,7 @@ public class Main extends Application {
     @Override
     public void start(final Stage primaryStage) throws Exception{
         primaryStage.setTitle("MyLib");
-        primaryStage.setScene(new MainScene(new Pane(), 1000, 800));
+        primaryStage.setScene(new AddBookScene(primaryStage, new Pane(), 800, 500));
 
         primaryStage.setWidth(800);
         primaryStage.setHeight(500);
