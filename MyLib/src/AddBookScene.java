@@ -1,15 +1,17 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AddBookScene extends Scene {
 
@@ -27,8 +29,8 @@ public class AddBookScene extends Scene {
     private Button chooseFile;
     private TextField name;
     private TextField author;
-    private ComboBox<String> moods;
-    private ComboBox<String> genres;
+    private ComboBox<Mood> moods;
+    private ComboBox<Genre> genres;
     final StarRating starRating = new StarRating(150, 300);
     final FileChooser fileChooser = new FileChooser();
     private File file;
@@ -71,31 +73,59 @@ public class AddBookScene extends Scene {
                     }
                 }
         );
+        addButton.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        buildTheBook();
+                    }
+                }
+        );
     }
 
-        private void sceneSetup () {
+    private void sceneSetup() {
 
-            backToMainScene.relocate(0, 0);
-            fileLabel.relocate(50, 50);
-            chooseFile.relocate(150, 50);
-            nameLabel.relocate(50, 100);
-            authorLabel.relocate(50, 150);
-            genreLabel.relocate(50, 200);
-            moodLabel.relocate(50, 250);
-            rateLabel.relocate(50, 300);
-            name.relocate(150, 100);
-            name.setMinWidth(600);
-            author.setMinWidth(600);
-            genres.setMinWidth(600);
-            moods.setMinWidth(600);
-            author.relocate(150, 150);
-            genres.relocate(150, 200);
-            moods.relocate(150, 250);
-            addLabel.relocate(650, 400);
-            addButton.relocate(700, 400);
+        backToMainScene.relocate(0, 0);
+        fileLabel.relocate(50, 50);
+        chooseFile.relocate(150, 50);
+        nameLabel.relocate(50, 100);
+        authorLabel.relocate(50, 150);
+        genreLabel.relocate(50, 200);
+        moodLabel.relocate(50, 250);
+        rateLabel.relocate(50, 300);
+        name.relocate(150, 100);
+        name.setMinWidth(600);
+        author.setMinWidth(600);
+        genres.setMinWidth(600);
+        moods.setMinWidth(600);
+        author.relocate(150, 150);
+        genres.relocate(150, 200);
+        moods.relocate(150, 250);
+        addLabel.relocate(650, 400);
+        addButton.relocate(700, 400);
+        ObservableList<Mood> moodsValues = FXCollections.observableArrayList(Arrays.asList(Mood.values()));
+        moods.setItems(moodsValues);
+        ObservableList<Genre> genresValues = FXCollections.observableArrayList(Arrays.asList(Genre.values()));
+        genres.setItems(genresValues);
+        genres.getSelectionModel().select(0);
+        moods.getSelectionModel().select(0);
+        pane.getChildren().addAll(fileLabel, nameLabel, genreLabel, moodLabel, rateLabel, name,
+                addLabel, addButton, backToMainScene, author, moods, genres, authorLabel, chooseFile, starRating);
+    }
 
-            pane.getChildren().addAll(fileLabel, nameLabel, genreLabel, moodLabel, rateLabel, name,
-                    addLabel, addButton, backToMainScene, author, moods, genres, authorLabel, chooseFile, starRating);
+
+    private void buildTheBook() {
+
+        if(name.getText().isEmpty()) {
+            return;
         }
-
+        if(author.getText().isEmpty()) {
+            return;
+        }
+        if(file == null) {
+            return;
+        }
+        Book book = new Book(file, name.getText(), author.getText(), moods.getValue(), genres.getValue(), starRating.getRate());
+        primaryStage.setScene(new MainScene(primaryStage, new Pane(), 800, 500));
     }
+}

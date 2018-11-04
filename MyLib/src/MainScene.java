@@ -12,7 +12,7 @@ public class MainScene extends Scene {
     final private Stage primaryStage;
     private Pane pane;
     private Button addBook;
-private Button deleteBook;
+    private Button deleteBook;
     private ComboBox<String> sortCategories;
     private TextField searchRequest;
     private Button search;

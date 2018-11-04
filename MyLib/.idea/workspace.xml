@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59628546-50c8-475c-9943-dc739d89718c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyLib.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyLib/Book.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyLib/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyLib/MainScene.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AddBookScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Genre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MainScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Mood.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/cmpThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/cmpThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/guiController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/guiController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/guiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/guiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/mainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/mainClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/stringComparisonThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab4/out/production/Lab4/Forms/stringComparisonThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/modules/lab5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/.idea/modules/lab5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/project/target/config-classes/$804d5f348c1ee1ce34c2$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/project/target/config-classes/$804d5f348c1ee1ce34c2.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/project/target/config-classes/$804d5f348c1ee1ce34c2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/src/test/scala/MainTests.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/src/test/scala/MainTests.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/.history" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/default/lab5$sources/0.1/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/default/lab5$sources/0.1/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/default/lab5$sources/0.1/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/default/lab5$sources/0.1/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-compile-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-compile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-optional.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-provided.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-runtime-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-runtime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-scala-tool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-test-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/resolution-cache/reports/default-lab5$sources-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/scala-2.12/test-classes/MainTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/scala-2.12/test-classes/MainTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/streams/$global/$global/dumpStructure/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/streams/$global/$global/dumpStructure/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab5/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab5/target/streams/$global/updateClassifiers/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddBookScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddBookScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StarRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StarRating.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,6 +50,24 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="820250107">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="853" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="853" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -109,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="69" column="132" selection-start-line="69" selection-start-column="132" selection-end-line="69" selection-end-column="132" />
+            <state relative-caret-position="667">
+              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,20 +95,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/star.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/StarRating.java">
+        <entry file="file://$PROJECT_DIR$/src/AddBookScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+            <state relative-caret-position="191">
+              <caret line="110" column="42" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2257#2258#0" expanded="true" />
-                <element signature="e#2284#2285#0" expanded="true" />
+                <element signature="e#2629#2630#0" expanded="true" />
+                <element signature="e#2678#2679#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StarRating.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-455">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,26 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Star.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#707#708#0" expanded="true" />
-                <element signature="e#793#794#0" expanded="true" />
-                <element signature="e#695#696#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AddBookScene.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+            <state relative-caret-position="306">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -170,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="323">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Mood.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="51">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -191,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Genre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            <state relative-caret-position="17">
+              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -206,6 +172,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>chooseFile</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -215,13 +186,13 @@
         <option value="$PROJECT_DIR$/src/MainClass.java" />
         <option value="$PROJECT_DIR$/src/Genre.java" />
         <option value="$PROJECT_DIR$/src/Mood.java" />
-        <option value="$PROJECT_DIR$/src/Book.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/MainScene.java" />
         <option value="$PROJECT_DIR$/src/starRating.java" />
-        <option value="$PROJECT_DIR$/src/AddBookScene.java" />
+        <option value="$PROJECT_DIR$/src/MainScene.java" />
         <option value="$PROJECT_DIR$/src/Star.java" />
+        <option value="$PROJECT_DIR$/src/Book.java" />
         <option value="$PROJECT_DIR$/src/StarRating.java" />
+        <option value="$PROJECT_DIR$/src/AddBookScene.java" />
       </list>
     </option>
   </component>
@@ -244,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -261,14 +233,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541347913953" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/IntelliJIDEA/Epam2lvl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -319,17 +290,18 @@
       <updated>1541190592817</updated>
       <workItem from="1541190598869" duration="19492000" />
       <workItem from="1541345894975" duration="2016000" />
+      <workItem from="1541348052891" duration="2312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21508000" />
+    <option name="totallyTimeSpent" value="23820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12348993" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12483221" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -365,19 +337,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/StarRating.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/download.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -388,37 +351,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Book.java">
+    <entry file="file://$PROJECT_DIR$/src/star.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Mood.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Genre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Star.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Mood.java">
+    <entry file="file://$PROJECT_DIR$/src/Book.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="323">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Genre.java">
+    <entry file="file://$PROJECT_DIR$/src/StarRating.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="-455">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/download.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="69" column="132" selection-start-line="69" selection-start-column="132" selection-end-line="69" selection-end-column="132" />
+        <state relative-caret-position="667">
+          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -427,41 +410,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddBookScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="33" column="22" lean-forward="true" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        <state relative-caret-position="191">
+          <caret line="110" column="42" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/star.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Star.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-            <element signature="e#695#696#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StarRating.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2257#2258#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
+            <element signature="e#2629#2630#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
           </folding>
         </state>
       </provider>
