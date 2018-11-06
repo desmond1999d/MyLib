@@ -10,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AddBookScene extends Scene {
@@ -34,6 +33,7 @@ public class AddBookScene extends Scene {
     final StarRating starRating = new StarRating(150, 300);
     final FileChooser fileChooser = new FileChooser();
     private File file;
+    private DatabaseInteract databaseInteract;
 
     AddBookScene(final Stage stage, final Pane constructorPane, int sizeX, int sizeY) {
         super(constructorPane, sizeX, sizeY);
@@ -53,6 +53,7 @@ public class AddBookScene extends Scene {
         author = new TextField();
         moods = new ComboBox<>();
         genres = new ComboBox<>();
+        databaseInteract = new DatabaseInteract();
         sceneSetup();
         setActions();
     }
@@ -77,7 +78,16 @@ public class AddBookScene extends Scene {
                 new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        buildTheBook();
+                        try {
+                            databaseInteract.insertBook(buildTheBook());
+                            Pane pane1 = new Pane();
+                            MainScene mainScene = null;
+                            mainScene = new MainScene(primaryStage, pane1, 800, 500);
+                            int i = 0;
+                            primaryStage.setScene(mainScene);
+                        } catch (NullPointerException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
         );
@@ -114,18 +124,18 @@ public class AddBookScene extends Scene {
     }
 
 
-    private void buildTheBook() {
+    private Book buildTheBook() {
 
-        if(name.getText().isEmpty()) {
-            return;
+        if (name.getText().isEmpty()) {
+            return null;
         }
-        if(author.getText().isEmpty()) {
-            return;
+        if (author.getText().isEmpty()) {
+            return null;
         }
-        if(file == null) {
-            return;
+        if (file == null) {
+            return null;
         }
         Book book = new Book(file, name.getText(), author.getText(), moods.getValue(), genres.getValue(), starRating.getRate());
-        primaryStage.setScene(new MainScene(primaryStage, new Pane(), 800, 500));
+        return book;
     }
 }

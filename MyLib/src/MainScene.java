@@ -19,6 +19,7 @@ public class MainScene extends Scene {
     private ComboBox<String> sortCriterion;
     private ListView<Book> booksListRepresentation;
     private ObservableList<Book> booksList;
+    private DatabaseInteract databaseInteract;
 
     MainScene(final Stage stage, final Pane constructorPane, final int sizeX, final int sizeY) {
         super(constructorPane, sizeX, sizeY);
@@ -30,7 +31,8 @@ public class MainScene extends Scene {
         searchRequest = new TextField();
         sortCategories = new ComboBox<>();
         sortCriterion = new ComboBox<>();
-        booksList = FXCollections.observableArrayList();
+        databaseInteract = new DatabaseInteract();
+        booksList = FXCollections.observableList(databaseInteract.getBooks());
         booksListRepresentation = new ListView<>(booksList);
         sceneSetup();
         setActions();
