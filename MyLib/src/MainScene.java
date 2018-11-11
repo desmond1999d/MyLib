@@ -7,30 +7,30 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.util.LinkedList;
+
 public class MainScene extends Scene {
 
     final private Stage primaryStage;
     private Pane pane;
     private Button addBook;
     private Button deleteBook;
-    private ComboBox<String> sortCategories;
     private TextField searchRequest;
     private Button search;
-    private ComboBox<String> sortCriterion;
     private ListView<Book> booksListRepresentation;
     private ObservableList<Book> booksList;
     private DatabaseInteract databaseInteract;
+    private SortChoise sortChoise;
 
     MainScene(final Stage stage, final Pane constructorPane, final int sizeX, final int sizeY) {
         super(constructorPane, sizeX, sizeY);
+        sortChoise = new SortChoise();
         primaryStage = stage;
         pane = constructorPane;
         addBook = new Button("+");
         deleteBook = new Button("-");
         search = new Button("Search");
         searchRequest = new TextField();
-        sortCategories = new ComboBox<>();
-        sortCriterion = new ComboBox<>();
         databaseInteract = new DatabaseInteract();
         booksList = FXCollections.observableList(databaseInteract.getBooks());
         booksListRepresentation = new ListView<>(booksList);
@@ -44,6 +44,15 @@ public class MainScene extends Scene {
                     @Override
                     public void handle(ActionEvent event) {
                         primaryStage.setScene(new AddBookScene(primaryStage, new Pane(), 800, 600));
+                    }
+                }
+        );
+        deleteBook.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        databaseInteract.deleteBook(booksListRepresentation.getSelectionModel().getSelectedItem());
+                        booksListRepresentation.getItems().remove(booksListRepresentation.getSelectionModel().getSelectedItem());
                     }
                 }
         );
@@ -61,15 +70,11 @@ public class MainScene extends Scene {
         searchRequest.relocate(50, 100);
         searchRequest.setMaxSize(300, 25);
         searchRequest.setMinWidth(300);
-        sortCategories.setMaxSize(300, 25);
-        sortCategories.setMinWidth(300);
-        sortCategories.relocate(50, 150);
-        sortCriterion.setMaxSize(300, 25);
-        sortCriterion.setMinWidth(300);
-        sortCriterion.relocate(50, 200);
+        sortChoise.relocate(50, 150);
         booksListRepresentation.relocate(500, 50);
         booksListRepresentation.setMinSize(300, 450);
-        pane.getChildren().addAll(addBook, deleteBook, search, searchRequest, sortCategories, sortCriterion, booksListRepresentation);
+        pane.getChildren().addAll(addBook, deleteBook, search, searchRequest,
+                booksListRepresentation, sortChoise);
     }
 
 }

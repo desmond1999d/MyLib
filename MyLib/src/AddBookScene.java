@@ -135,7 +135,7 @@ public class AddBookScene extends Scene {
         if (file == null) {
             return null;
         }
-        Book book = new Book(file, name.getText(), author.getText(), moods.getValue(), genres.getValue(), starRating.getRate());
+        Book book = new Book(0, file, name.getText(), author.getText(), moods.getValue(), genres.getValue(), starRating.getRate());
         return book;
     }
 }

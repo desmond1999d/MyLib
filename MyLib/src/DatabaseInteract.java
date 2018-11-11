@@ -14,13 +14,10 @@ public class DatabaseInteract {
 
     public DatabaseInteract() {
         try {
-            //Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(URL, username, password);
         } catch (SQLException e) {
             e.printStackTrace();
-        } //catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
+        }
     }
 
     public LinkedList<Book> getBooks() {
@@ -32,6 +29,7 @@ public class DatabaseInteract {
             ResultSet result = statement.executeQuery(
                     "SELECT * FROM books");
             while (result.next()) {
+                int id = result.getInt("idbooks");
                 String name = result.getString("name");
                 String author = result.getString("author");
                 int genre = result.getInt("genre");
@@ -40,7 +38,7 @@ public class DatabaseInteract {
                 Time dateTime = result.getTime("time");
                 String filePath = result.getString("filepath");
                 File file = new File(filePath);
-                book = new Book(file, name, author, Mood.values()[mood], Genre.values()[genre], rate, dateTime);
+                book = new Book(id, file, name, author, Mood.values()[mood], Genre.values()[genre], rate, dateTime);
                 books.add(book);
             }
         } catch (SQLException e) {
@@ -54,15 +52,28 @@ public class DatabaseInteract {
         try {
             preparedStatement = connection.prepareStatement(
                     "INSERT INTO books(name, author, genre, mood, rate, time, filepath) values(?, ?, ?, ?, ?, ?, ?)");
-            preparedStatement.setString(1, book.name);
-            preparedStatement.setString(2, book.author);
-            preparedStatement.setInt(3, book.genre.ordinal());
-            preparedStatement.setInt(4, book.mood.ordinal());
-            preparedStatement.setInt(5, book.rate);
+            preparedStatement.setString(1, book.getName());
+            preparedStatement.setString(2, book.getAuthor());
+            preparedStatement.setInt(3, book.getGenre().ordinal());
+            preparedStatement.setInt(4, book.getMood().ordinal());
+            preparedStatement.setInt(5, book.getRate());
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String time = sdf.format(book.creationTime);
+            String time = sdf.format(book.getCreationTime());
             preparedStatement.setString(6, time);
-            preparedStatement.setString(7, book.file.getAbsolutePath());
+            preparedStatement.setString(7, book.getFile().getAbsolutePath());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteBook(Book book) {
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(
+                    "DELETE FROM books WHERE idbooks=?");
+            System.out.println(book.getId());
+            preparedStatement.setInt(1, book.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
