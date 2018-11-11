@@ -24,7 +24,7 @@ public class MainScene extends Scene {
 
     MainScene(final Stage stage, final Pane constructorPane, final int sizeX, final int sizeY) {
         super(constructorPane, sizeX, sizeY);
-        sortChoise = new SortChoise();
+        sortChoise = new SortChoise(booksListRepresentation);
         primaryStage = stage;
         pane = constructorPane;
         addBook = new Button("+");
