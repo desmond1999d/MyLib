@@ -35,6 +35,11 @@ public class Book {
         creationTime = new Date();
     }
 
+    @Override
+    public String toString() {
+        return name + ", " + author;
+    }
+
     public int getId() {
         return id;
     }

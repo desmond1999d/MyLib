@@ -114,15 +114,15 @@ public class SortChoise extends Pane {
                             if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiseInits.get(i).getCategory())) {
                                 if (sortChoiseInits.get(i).getComparator() != null) {
                                     books.sort(sortChoiseInits.get(i).getComparator());
-                                } else if(newValue.equals("")) {
+                                } else if(sortCategories.getSelectionModel().getSelectedItem().equals("Mood")) {
                                     LinkedList<Book> result = new LinkedList<>();
                                     for (int j = 0; j < books.size(); j++) {
                                         if (books.get(j).getMood().toString().equals(newValue)) {
-                                            result.add(books.get(i));
+                                            result.add(books.get(j));
                                         }
                                     }
                                     books = result;
-                                } else if (newValue.equals("")) {
+                                } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Genre")) {
                                     LinkedList<Book> result = new LinkedList<>();
                                     for (int j = 0; j < books.size(); j++) {
                                         if (books.get(j).getGenre().toString().equals(newValue)) {

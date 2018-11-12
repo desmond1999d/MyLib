@@ -15,8 +15,7 @@ public class MainScene extends Scene {
     private Pane pane;
     private Button addBook;
     private Button deleteBook;
-    private TextField searchRequest;
-    private Button search;
+    private SearchBar searchBar;
     private ListView<Book> booksListRepresentation;
     private ObservableList<Book> booksList;
     private DatabaseInteract databaseInteract;
@@ -24,16 +23,15 @@ public class MainScene extends Scene {
 
     MainScene(final Stage stage, final Pane constructorPane, final int sizeX, final int sizeY) {
         super(constructorPane, sizeX, sizeY);
-        sortChoise = new SortChoise(booksListRepresentation);
         primaryStage = stage;
         pane = constructorPane;
         addBook = new Button("+");
         deleteBook = new Button("-");
-        search = new Button("Search");
-        searchRequest = new TextField();
         databaseInteract = new DatabaseInteract();
         booksList = FXCollections.observableList(databaseInteract.getBooks());
         booksListRepresentation = new ListView<>(booksList);
+        sortChoise = new SortChoise(booksListRepresentation);
+        searchBar = new SearchBar(booksListRepresentation);
         sceneSetup();
         setActions();
     }
@@ -61,19 +59,15 @@ public class MainScene extends Scene {
     private void sceneSetup() {
         addBook.relocate(400, 50);
         deleteBook.relocate(350, 50);
-        search.relocate(400, 100);
+        searchBar.relocate(50, 100);
         addBook.setMaxSize(50, 25);
         addBook.setMinWidth(50);
         deleteBook.setMaxSize(50, 25);
         deleteBook.setMinWidth(50);
-        search.setMaxSize(75, 25);
-        searchRequest.relocate(50, 100);
-        searchRequest.setMaxSize(300, 25);
-        searchRequest.setMinWidth(300);
         sortChoise.relocate(50, 150);
         booksListRepresentation.relocate(500, 50);
         booksListRepresentation.setMinSize(300, 450);
-        pane.getChildren().addAll(addBook, deleteBook, search, searchRequest,
+        pane.getChildren().addAll(addBook, deleteBook, searchBar,
                 booksListRepresentation, sortChoise);
     }
 
