@@ -6,6 +6,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 
 import java.text.Collator;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -51,7 +52,7 @@ public class SortChoise extends Pane {
         Comparator<Book> rateComparator = new Comparator<Book>() {
             @Override
             public int compare(Book o1, Book o2) {
-                if (o1.getRate() > o2.getRate())
+                if (o1.getRate() < o2.getRate())
                     return 1;
                 else if (o1.getRate() == o2.getRate())
                     return 0;
@@ -83,14 +84,6 @@ public class SortChoise extends Pane {
         this.getChildren().addAll(sortCategories, sortCriterion);
     }
 
-    public ComboBox<String> getSortCategories() {
-        return sortCategories;
-    }
-
-    public ComboBox<String> getSortCriterion() {
-        return sortCriterion;
-    }
-
     private void setActions() {
         sortCategories.valueProperty().addListener(
                 new ChangeListener<String>() {
@@ -108,32 +101,38 @@ public class SortChoise extends Pane {
                 new ChangeListener<String>() {
                     @Override
                     public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                        DatabaseInteract databaseInteract = new DatabaseInteract();
-                        List<Book> books = databaseInteract.getBooks();
-                        for (int i = 0; i < sortChoiseInits.size(); i++) {
-                            if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiseInits.get(i).getCategory())) {
-                                if (sortChoiseInits.get(i).getComparator() != null) {
-                                    books.sort(sortChoiseInits.get(i).getComparator());
-                                } else if(sortCategories.getSelectionModel().getSelectedItem().equals("Mood")) {
-                                    LinkedList<Book> result = new LinkedList<>();
-                                    for (int j = 0; j < books.size(); j++) {
-                                        if (books.get(j).getMood().toString().equals(newValue)) {
-                                            result.add(books.get(j));
+                        try {
+                            DatabaseInteract databaseInteract = new DatabaseInteract();
+                            List<Book> books = databaseInteract.getBooks();
+                            for (int i = 0; i < sortChoiseInits.size(); i++) {
+                                if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiseInits.get(i).getCategory())) {
+                                    if (sortChoiseInits.get(i).getComparator() != null) {
+                                        books.sort(sortChoiseInits.get(i).getComparator());
+                                        if(newValue.equals(sortChoiseInits.get(i).getCriterionValues().get(1)))
+                                            Collections.reverse(books);
+                                    } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Mood")) {
+                                        LinkedList<Book> result = new LinkedList<>();
+                                        for (int j = 0; j < books.size(); j++) {
+                                            if (books.get(j).getMood().toString().equals(newValue)) {
+                                                result.add(books.get(j));
+                                            }
                                         }
-                                    }
-                                    books = result;
-                                } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Genre")) {
-                                    LinkedList<Book> result = new LinkedList<>();
-                                    for (int j = 0; j < books.size(); j++) {
-                                        if (books.get(j).getGenre().toString().equals(newValue)) {
-                                            result.add(books.get(j));
+                                        books = result;
+                                    } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Genre")) {
+                                        LinkedList<Book> result = new LinkedList<>();
+                                        for (int j = 0; j < books.size(); j++) {
+                                            if (books.get(j).getGenre().toString().equals(newValue)) {
+                                                result.add(books.get(j));
+                                            }
                                         }
+                                        books = result;
                                     }
-                                    books = result;
                                 }
                             }
+                            booksListRepresentation.setItems(FXCollections.observableList(books));
+                        } catch (NullPointerException e) {
+                            System.out.println(e.getMessage());
                         }
-                        booksListRepresentation.setItems(FXCollections.observableList(books));
                     }
                 }
         );

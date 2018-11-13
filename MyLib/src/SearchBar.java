@@ -23,6 +23,7 @@ public class SearchBar extends Pane {
         searchRequest = new TextField();
         searchButton = new Button("Search");
         paneSetup();
+        setActions();
     }
 
     private void setActions() {
