@@ -4,10 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.util.LinkedList;
+import java.awt.*;
+import java.io.IOException;
 
 public class MainScene extends Scene {
 
@@ -51,6 +55,30 @@ public class MainScene extends Scene {
                     public void handle(ActionEvent event) {
                         databaseInteract.deleteBook(booksListRepresentation.getSelectionModel().getSelectedItem());
                         booksListRepresentation.getItems().remove(booksListRepresentation.getSelectionModel().getSelectedItem());
+                    }
+                }
+        );
+        booksListRepresentation.setOnMouseClicked(
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
+                            Book currentItemSelected = booksListRepresentation.getSelectionModel()
+                                    .getSelectedItem();
+                            try {
+                                if (currentItemSelected.getFile().exists()) {
+                                    Desktop.getDesktop().open(currentItemSelected.getFile());
+                                } else {
+                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                                    alert.setTitle("Error");
+                                    alert.setHeaderText("File not found");
+                                    alert.setContentText(currentItemSelected.getFile() + " doesn't exist.");
+                                    alert.showAndWait();
+                                }
+                            } catch (IOException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        }
                     }
                 }
         );

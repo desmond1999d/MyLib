@@ -28,6 +28,8 @@ public class SortChoise extends Pane {
         sortCriterion.setMaxSize(300, 25);
         sortCriterion.setMinWidth(300);
         sortCriterion.relocate(0, 50);
+        sortCategories.setPromptText("Categories");
+        sortCriterion.setPromptText("Criterion");
         LinkedList<String> categories = new LinkedList<>();
         categories.add("Alphabet");
         categories.add("Genre");
@@ -77,8 +79,6 @@ public class SortChoise extends Pane {
         sortChoiseInits.add(new SortChoiseInit(categories.get(2), null, byMoodCriterion));
         sortChoiseInits.add(new SortChoiseInit(categories.get(3), rateComparator, byUpDownCriterion));
         sortChoiseInits.add(new SortChoiseInit(categories.get(4), dateComparator, byUpDownCriterion));
-        sortCategories.setPromptText("Categories");
-        sortCriterion.setPromptText("Criterion");
         sortCategories.setItems(FXCollections.observableList(categories));
         setActions();
         this.getChildren().addAll(sortCategories, sortCriterion);
