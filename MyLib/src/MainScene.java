@@ -9,7 +9,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
 import java.awt.*;
 import java.io.IOException;
 
@@ -45,7 +44,7 @@ public class MainScene extends Scene {
                 new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        primaryStage.setScene(new AddBookScene(primaryStage, new Pane(), 800, 600));
+                        primaryStage.setScene(new AddBookScene(primaryStage, new Pane(), Main.sizeX, Main.sizeY));
                     }
                 }
         );
@@ -63,8 +62,7 @@ public class MainScene extends Scene {
                     @Override
                     public void handle(MouseEvent event) {
                         if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
-                            Book currentItemSelected = booksListRepresentation.getSelectionModel()
-                                    .getSelectedItem();
+                            Book currentItemSelected = booksListRepresentation.getSelectionModel().getSelectedItem();
                             try {
                                 if (currentItemSelected.getFile().exists()) {
                                     Desktop.getDesktop().open(currentItemSelected.getFile());
@@ -85,16 +83,19 @@ public class MainScene extends Scene {
     }
 
     private void sceneSetup() {
-        addBook.relocate(400, 50);
-        deleteBook.relocate(350, 50);
-        searchBar.relocate(50, 100);
-        addBook.setMaxSize(50, 25);
-        addBook.setMinWidth(50);
-        deleteBook.setMaxSize(50, 25);
-        deleteBook.setMinWidth(50);
-        sortChoise.relocate(50, 150);
-        booksListRepresentation.relocate(500, 50);
-        booksListRepresentation.setMinSize(300, 450);
+        int y = MainSceneElementsLocations.yGape;
+        addBook.relocate(MainSceneElementsLocations.addBookXIndent, y);
+        y += MainSceneElementsLocations.yGape;
+        deleteBook.relocate(MainSceneElementsLocations.deleteBookXIndent, MainSceneElementsLocations.yGape);
+        searchBar.relocate(MainSceneElementsLocations.xIndent, ++y);
+        y += MainSceneElementsLocations.yGape;
+        addBook.setMaxSize(MainSceneElementsLocations.buttonWidth, MainSceneElementsLocations.elementsHeight);
+        addBook.setMinWidth(MainSceneElementsLocations.buttonWidth);
+        deleteBook.setMaxSize(MainSceneElementsLocations.buttonWidth, MainSceneElementsLocations.elementsHeight);
+        deleteBook.setMinWidth(MainSceneElementsLocations.buttonWidth);
+        sortChoise.relocate(MainSceneElementsLocations.xIndent, y);
+        booksListRepresentation.relocate(MainSceneElementsLocations.booksRepresentationListIndentX, MainSceneElementsLocations.yGape);
+        booksListRepresentation.setMinSize(MainSceneElementsLocations.booksListRepresentationWidth, MainSceneElementsLocations.booksListRepresentationHeight);
         pane.getChildren().addAll(addBook, deleteBook, searchBar,
                 booksListRepresentation, sortChoise);
     }

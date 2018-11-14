@@ -53,7 +53,7 @@ public class SearchBar extends Pane {
     private void paneSetup() {
         searchRequest.setMaxSize(300, 25);
         searchRequest.setMinWidth(300);
-        searchButton.relocate(350, 0);
+        searchButton.relocate(360, 0);
         this.getChildren().addAll(searchRequest, searchButton);
     }
 

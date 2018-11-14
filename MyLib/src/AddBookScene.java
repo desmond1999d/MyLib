@@ -69,7 +69,7 @@ public class AddBookScene extends Scene {
                 new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        primaryStage.setScene(new MainScene(primaryStage, new Pane(), 800, 500));
+                        primaryStage.setScene(new MainScene(primaryStage, new Pane(), Main.sizeX, Main.sizeY));
                     }
                 }
         );
@@ -81,7 +81,7 @@ public class AddBookScene extends Scene {
                             databaseInteract.insertBook(buildTheBook());
                             Pane pane1 = new Pane();
                             MainScene mainScene = null;
-                            mainScene = new MainScene(primaryStage, pane1, 800, 500);
+                            mainScene = new MainScene(primaryStage, pane1, Main.sizeX, Main.sizeY);
                             int i = 0;
                             primaryStage.setScene(mainScene);
                         } catch (NullPointerException e) {

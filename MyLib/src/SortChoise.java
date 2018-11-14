@@ -23,19 +23,70 @@ public class SortChoise extends Pane {
         this.booksListRepresentation = booksListRepresentation;
         sortCategories = new ComboBox<String>();
         sortCriterion = new ComboBox<String>();
-        sortCategories.setMaxSize(300, 25);
-        sortCategories.setMinWidth(300);
-        sortCriterion.setMaxSize(300, 25);
-        sortCriterion.setMinWidth(300);
-        sortCriterion.relocate(0, 50);
-        sortCategories.setPromptText("Categories");
-        sortCriterion.setPromptText("Criterion");
+        sceneSetup();
+        createSortChoices();
+        setActions();
+        this.getChildren().addAll(sortCategories, sortCriterion);
+    }
+
+    private void setActions() {
+        sortCategories.valueProperty().addListener(
+                new ChangeListener<String>() {
+                    @Override
+                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                        for (int i = 0; i < sortChoiseInits.size(); i++) {
+                            if (newValue.equals(sortChoiseInits.get(i).getCategory())) {
+                                sortCriterion.setItems(FXCollections.observableList(sortChoiseInits.get(i).getCriterionValues()));
+                            }
+                        }
+                    }
+                }
+        );
+        sortCriterion.valueProperty().addListener(
+                new ChangeListener<String>() {
+                    @Override
+                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                        try {
+                            DatabaseInteract databaseInteract = new DatabaseInteract();
+                            List<Book> books = databaseInteract.getBooks();
+                            for (int i = 0; i < sortChoiseInits.size(); i++) {
+                                if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiseInits.get(i).getCategory())) {
+                                    if (sortChoiseInits.get(i).getComparator() != null) {
+                                        books.sort(sortChoiseInits.get(i).getComparator());
+                                        if (newValue.equals(sortChoiseInits.get(i).getCriterionValues().get(1)))
+                                            Collections.reverse(books);
+                                    } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Mood")) {
+                                        LinkedList<Book> result = new LinkedList<>();
+                                        for (int j = 0; j < books.size(); j++) {
+                                            if (books.get(j).getMood().toString().equals(newValue)) {
+                                                result.add(books.get(j));
+                                            }
+                                        }
+                                        books = result;
+                                    } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Genre")) {
+                                        LinkedList<Book> result = new LinkedList<>();
+                                        for (int j = 0; j < books.size(); j++) {
+                                            if (books.get(j).getGenre().toString().equals(newValue)) {
+                                                result.add(books.get(j));
+                                            }
+                                        }
+                                        books = result;
+                                    }
+                                }
+                            }
+                            booksListRepresentation.setItems(FXCollections.observableList(books));
+                        } catch (NullPointerException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    }
+                }
+        );
+    }
+
+    private void createSortChoices() {
         LinkedList<String> categories = new LinkedList<>();
-        categories.add("Alphabet");
-        categories.add("Genre");
-        categories.add("Mood");
-        categories.add("Rate");
-        categories.add("Date");
+        for (int i = 0; i < SortCategories.values().length; i++)
+            categories.add(SortCategories.values()[i].toString());
         List<String> byUpDownCriterion = new LinkedList<>();
         List<String> byMoodCriterion = new LinkedList<>();
         List<String> byGenreCriterion = new LinkedList<>();
@@ -80,62 +131,16 @@ public class SortChoise extends Pane {
         sortChoiseInits.add(new SortChoiseInit(categories.get(3), rateComparator, byUpDownCriterion));
         sortChoiseInits.add(new SortChoiseInit(categories.get(4), dateComparator, byUpDownCriterion));
         sortCategories.setItems(FXCollections.observableList(categories));
-        setActions();
-        this.getChildren().addAll(sortCategories, sortCriterion);
     }
 
-    private void setActions() {
-        sortCategories.valueProperty().addListener(
-                new ChangeListener<String>() {
-                    @Override
-                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                        for (int i = 0; i < sortChoiseInits.size(); i++) {
-                            if (newValue.equals(sortChoiseInits.get(i).getCategory())) {
-                                sortCriterion.setItems(FXCollections.observableList(sortChoiseInits.get(i).getCriterionValues()));
-                            }
-                        }
-                    }
-                }
-        );
-        sortCriterion.valueProperty().addListener(
-                new ChangeListener<String>() {
-                    @Override
-                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                        try {
-                            DatabaseInteract databaseInteract = new DatabaseInteract();
-                            List<Book> books = databaseInteract.getBooks();
-                            for (int i = 0; i < sortChoiseInits.size(); i++) {
-                                if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiseInits.get(i).getCategory())) {
-                                    if (sortChoiseInits.get(i).getComparator() != null) {
-                                        books.sort(sortChoiseInits.get(i).getComparator());
-                                        if(newValue.equals(sortChoiseInits.get(i).getCriterionValues().get(1)))
-                                            Collections.reverse(books);
-                                    } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Mood")) {
-                                        LinkedList<Book> result = new LinkedList<>();
-                                        for (int j = 0; j < books.size(); j++) {
-                                            if (books.get(j).getMood().toString().equals(newValue)) {
-                                                result.add(books.get(j));
-                                            }
-                                        }
-                                        books = result;
-                                    } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Genre")) {
-                                        LinkedList<Book> result = new LinkedList<>();
-                                        for (int j = 0; j < books.size(); j++) {
-                                            if (books.get(j).getGenre().toString().equals(newValue)) {
-                                                result.add(books.get(j));
-                                            }
-                                        }
-                                        books = result;
-                                    }
-                                }
-                            }
-                            booksListRepresentation.setItems(FXCollections.observableList(books));
-                        } catch (NullPointerException e) {
-                            System.out.println(e.getMessage());
-                        }
-                    }
-                }
-        );
+    private void sceneSetup() {
+        sortCategories.setMaxSize(300, 25);
+        sortCategories.setMinWidth(300);
+        sortCriterion.setMaxSize(300, 25);
+        sortCriterion.setMinWidth(300);
+        sortCriterion.relocate(0, 50);
+        sortCategories.setPromptText("Categories");
+        sortCriterion.setPromptText("Criterion");
     }
 
 }
