@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.util.Arrays;
 
-public class AddBookScene extends Scene {
+class AddBookScene extends Scene {
 
     private Pane pane;
     private Stage primaryStage;
@@ -29,8 +29,8 @@ public class AddBookScene extends Scene {
     private TextField author;
     private ComboBox<Mood> moods;
     private ComboBox<Genre> genres;
-    final StarRating starRating = new StarRating(150, 300);
-    final FileChooser fileChooser = new FileChooser();
+    private final StarRating starRating = new StarRating(150, 300);
+    private final FileChooser fileChooser = new FileChooser();
     private File file;
     private DatabaseInteract databaseInteract;
 
@@ -134,7 +134,6 @@ public class AddBookScene extends Scene {
         if (file == null) {
             return null;
         }
-        Book book = new Book(0, file, name.getText(), author.getText(), moods.getValue(), genres.getValue(), starRating.getRate());
-        return book;
+        return new Book(0, file, name.getText(), author.getText(), moods.getValue(), genres.getValue(), starRating.getRate());
     }
 }

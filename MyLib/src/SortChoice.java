@@ -11,14 +11,14 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SortChoise extends Pane {
+class SortChoice extends Pane {
 
     private ComboBox<String> sortCategories;
     private ComboBox<String> sortCriterion;
-    private List<SortChoiseInit> sortChoiseInits;
+    private List<SortChoiseInit> sortChoiceInits;
     private ListView<Book> booksListRepresentation;
 
-    public SortChoise(ListView<Book> booksListRepresentation) {
+    SortChoice(ListView<Book> booksListRepresentation) {
         super();
         this.booksListRepresentation = booksListRepresentation;
         sortCategories = new ComboBox<String>();
@@ -34,9 +34,9 @@ public class SortChoise extends Pane {
                 new ChangeListener<String>() {
                     @Override
                     public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                        for (int i = 0; i < sortChoiseInits.size(); i++) {
-                            if (newValue.equals(sortChoiseInits.get(i).getCategory())) {
-                                sortCriterion.setItems(FXCollections.observableList(sortChoiseInits.get(i).getCriterionValues()));
+                        for (int i = 0; i < sortChoiceInits.size(); i++) {
+                            if (newValue.equals(sortChoiceInits.get(i).getCategory())) {
+                                sortCriterion.setItems(FXCollections.observableList(sortChoiceInits.get(i).getCriterionValues()));
                             }
                         }
                     }
@@ -49,11 +49,11 @@ public class SortChoise extends Pane {
                         try {
                             DatabaseInteract databaseInteract = new DatabaseInteract();
                             List<Book> books = databaseInteract.getBooks();
-                            for (int i = 0; i < sortChoiseInits.size(); i++) {
-                                if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiseInits.get(i).getCategory())) {
-                                    if (sortChoiseInits.get(i).getComparator() != null) {
-                                        books.sort(sortChoiseInits.get(i).getComparator());
-                                        if (newValue.equals(sortChoiseInits.get(i).getCriterionValues().get(1)))
+                            for (int i = 0; i < sortChoiceInits.size(); i++) {
+                                if (sortCategories.getSelectionModel().getSelectedItem().equals(sortChoiceInits.get(i).getCategory())) {
+                                    if (sortChoiceInits.get(i).getComparator() != null) {
+                                        books.sort(sortChoiceInits.get(i).getComparator());
+                                        if (newValue.equals(sortChoiceInits.get(i).getCriterionValues().get(1)))
                                             Collections.reverse(books);
                                     } else if (sortCategories.getSelectionModel().getSelectedItem().equals("Mood")) {
                                         LinkedList<Book> result = new LinkedList<>();
@@ -124,12 +124,12 @@ public class SortChoise extends Pane {
                     return 0;
             }
         };
-        sortChoiseInits = new LinkedList<>();
-        sortChoiseInits.add(new SortChoiseInit(categories.get(0), nameComparator, byUpDownCriterion));
-        sortChoiseInits.add(new SortChoiseInit(categories.get(1), null, byGenreCriterion));
-        sortChoiseInits.add(new SortChoiseInit(categories.get(2), null, byMoodCriterion));
-        sortChoiseInits.add(new SortChoiseInit(categories.get(3), rateComparator, byUpDownCriterion));
-        sortChoiseInits.add(new SortChoiseInit(categories.get(4), dateComparator, byUpDownCriterion));
+        sortChoiceInits = new LinkedList<>();
+        sortChoiceInits.add(new SortChoiseInit(categories.get(0), nameComparator, byUpDownCriterion));
+        sortChoiceInits.add(new SortChoiseInit(categories.get(1), null, byGenreCriterion));
+        sortChoiceInits.add(new SortChoiseInit(categories.get(2), null, byMoodCriterion));
+        sortChoiceInits.add(new SortChoiseInit(categories.get(3), rateComparator, byUpDownCriterion));
+        sortChoiceInits.add(new SortChoiseInit(categories.get(4), dateComparator, byUpDownCriterion));
         sortCategories.setItems(FXCollections.observableList(categories));
     }
 

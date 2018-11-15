@@ -2,7 +2,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Star extends ImageView {
+class Star extends ImageView {
     final int viewPortXEmpty = 378;
     final int viewPortXFull = 70;
     final int viewPortY = 223;
@@ -14,11 +14,11 @@ public class Star extends ImageView {
         setViewport(new Rectangle2D(viewPortXEmpty, viewPortY, width, height));
     }
 
-    public void choose() {
+    void choose() {
         setViewport(new Rectangle2D(viewPortXFull, viewPortY, width, height));
     }
 
-    public void empty() {
+    void empty() {
         setViewport(new Rectangle2D(viewPortXEmpty, viewPortY, width, height));
     }
 }

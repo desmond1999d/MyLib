@@ -11,13 +11,13 @@ import java.text.Collator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SearchBar extends Pane {
+class SearchBar extends Pane {
 
     private TextField searchRequest;
     private Button searchButton;
     private ListView<Book> booksListRepresentation;
 
-    public SearchBar(ListView<Book> booksListRepresentation) {
+    SearchBar(ListView<Book> booksListRepresentation) {
         super();
         this.booksListRepresentation = booksListRepresentation;
         searchRequest = new TextField();

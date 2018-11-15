@@ -22,7 +22,7 @@ public class MainScene extends Scene {
     private ListView<Book> booksListRepresentation;
     private ObservableList<Book> booksList;
     private DatabaseInteract databaseInteract;
-    private SortChoise sortChoise;
+    private SortChoice sortChoice;
 
     MainScene(final Stage stage, final Pane constructorPane, final int sizeX, final int sizeY) {
         super(constructorPane, sizeX, sizeY);
@@ -33,7 +33,7 @@ public class MainScene extends Scene {
         databaseInteract = new DatabaseInteract();
         booksList = FXCollections.observableList(databaseInteract.getBooks());
         booksListRepresentation = new ListView<>(booksList);
-        sortChoise = new SortChoise(booksListRepresentation);
+        sortChoice = new SortChoice(booksListRepresentation);
         searchBar = new SearchBar(booksListRepresentation);
         sceneSetup();
         setActions();
@@ -93,11 +93,11 @@ public class MainScene extends Scene {
         addBook.setMinWidth(MainSceneElementsLocations.buttonWidth);
         deleteBook.setMaxSize(MainSceneElementsLocations.buttonWidth, MainSceneElementsLocations.elementsHeight);
         deleteBook.setMinWidth(MainSceneElementsLocations.buttonWidth);
-        sortChoise.relocate(MainSceneElementsLocations.xIndent, y);
+        sortChoice.relocate(MainSceneElementsLocations.xIndent, y);
         booksListRepresentation.relocate(MainSceneElementsLocations.booksRepresentationListIndentX, MainSceneElementsLocations.yGape);
         booksListRepresentation.setMinSize(MainSceneElementsLocations.booksListRepresentationWidth, MainSceneElementsLocations.booksListRepresentationHeight);
         pane.getChildren().addAll(addBook, deleteBook, searchBar,
-                booksListRepresentation, sortChoise);
+                booksListRepresentation, sortChoice);
     }
 
 }

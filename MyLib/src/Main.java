@@ -23,7 +23,7 @@ public class Main extends Application {
     }
 
     /**
-     * auto-generted method
+     * auto-generated method
      * @param args command line arguments
      */
 
